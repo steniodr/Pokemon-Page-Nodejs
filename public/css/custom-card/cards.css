@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+.content {
+	height: 100vh;
+	background: linear-gradient(to bottom right, aqua, lightblue);
+	text-align: center;
+	padding: 4em 0;
+}
+
+.col-md-3 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+
+.cards {
+	/* display: flex; */
+	justify-content: space-evenly;
+}
+
+.card {
+	width: 100%;
+	position: relative;
+	height: 30em;
+	perspective: 150em;
+}
+
+.pokemon-img {
+	width: 100%;
+	margin-bottom: -15%;
+	fill: #fff;
+}
+
+.pokemon-img-back {
+	width: 25%;
+	fill: #fff;
+}
+
+.card__side {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30em;
+	backface-visibility: hidden;
+	transition: all 0.6s ease;
+	box-shadow: 1em 1em 2em rgba(0, 0, 0, .2);
+}
+
+.card__side--front {
+	background-color: #fff;
+}
+
+.card__side--back {
+	color: #fff;
+	transform: rotateY(180deg);
+}
+
+.card__side--back > img {
+	width: 50%;
+}
+
+.grass {
+	background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+	color: #fff;
+}
+
+.water {
+	background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+	color: #fff;
+}
+
+.fire {
+	background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+	color: #fff;
+}
+
+.bug {
+	background-image: linear-gradient(to right bottom, #def323, #A7B723);
+	color: #fff;
+}
+
+.normal {
+	background-image: linear-gradient(to right bottom, #dbd9c2, #AAA67F);
+	color: #fff;
+}
+
+.flying {
+	background-image: linear-gradient(to right bottom, #7fb7eb, #2784db);
+	color: #fff;
+}
+
+.electric {
+	background-image: linear-gradient(to right bottom, #d0f01e, #F9CF30);
+	color: #fff;
+}
+
+.poison {
+	background-image: linear-gradient(to right bottom, #b892f5, #70559B);
+	color: #fff;
+}
+
+.ground {
+	background-image: linear-gradient(to right bottom, #f39465, #DC6C33);
+	color: #fff;
+}
+
+.fairy {
+	background-image: linear-gradient(to right bottom, #f7d0f1, #FB8AEC);
+	color: #fff;
+}
+
+.fighting {
+	background-image: linear-gradient(to right bottom, #FF9A95, #df2525);
+	color: #fff;
+}
+
+.psychic {
+	background-image: linear-gradient(to right bottom, #f180a0, #FB5584);
+	color: #fff;
+}
+
+.rock {
+	background-image: linear-gradient(to right bottom, #e9ddbe, #8d7d50);
+	color: #fff;
+}
+
+.bg-attack {
+	background-color: #EF802E;
+}
+
+.bg-special-defense {
+	background-color: #76C74E;
+}
+
+.bg-speed {
+	background-color: #F85888;
+}
+
+.card:hover .card__side--front {
+	transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+	transform: rotate(0);
+}
+
+.card__description {
+	text-transform: uppercase;
+	font-size: 5em;
+	padding: 1em 0;
+}
+
+.card__description svg {
+	width: 1.5em;
+	height: 1.5em;
+	fill: #fff;
+}

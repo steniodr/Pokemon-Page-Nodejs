@@ -1,0 +1,29 @@
+{
+  "name": "pokedex-nodejs",
+  "version": "1.0.0",
+  "description": "Using the PokéAPI API to make a simple project to demonstrate skills in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steniodr/Pokedex-Nodejs.git"
+  },
+  "keywords": [
+    "pokedex",
+    "nodejs"
+  ],
+  "author": "Stenio D. Rapchan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steniodr/Pokedex-Nodejs/issues"
+  },
+  "homepage": "https://github.com/steniodr/Pokedex-Nodejs#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "got": "^11.8.2",
+    "nodemon": "^2.0.14"
+  }
+}
