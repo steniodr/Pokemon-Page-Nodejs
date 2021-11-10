@@ -12,14 +12,6 @@ app.use(express.json())
 
 let pokemonsList = [];
 let initialPokemons = [];
-let maxValues = {
-    "max-hp": 0,
-    "max-attack": 0,
-    "max-defense": 0,
-    "max-special-attack": 0,
-    "max-special-defense": 0,
-    "max-speed": 0,
-};
 
 (async () =>{
     let rawData,
@@ -60,14 +52,18 @@ let maxValues = {
             "stats": stats
         });
 
-        if (stats['hp'] > maxValues['max-hp'])                          maxValues['max-hp'] = stats['hp'];
-        if (stats['attack'] > maxValues['max-attack'])                  maxValues['max-attack'] = stats['attack'];
-        if (stats['defense'] > maxValues['max-defense'])                maxValues['max-defense'] = stats['defense'];
-        if (stats['special-attack'] > maxValues['max-special-attack'])  maxValues['max-special-attack'] = stats['special-attack'];
-        if (stats['special-defense'] > maxValues['special-defense'])    maxValues['special-defense'] = stats['special-defense'];
-        if (stats['speed'] > maxValues['max-speed'])                    maxValues['max-speed'] = stats['speed'];
-
-        if (initialPokemonsNames.includes(pokemon.name)) initialPokemons.push(pokemon);
+        if (initialPokemonsNames.includes(capitalize(pokemon.name))) {
+            initialPokemons.push({
+                "id": pokemon.id,
+                "name": capitalize(pokemon.name),
+                "img": pokemon.sprites.front_default,
+                "abilities": abilities,
+                "types": types,
+                "height": pokemon.height,
+                "weight": pokemon.weight,
+                "stats": stats
+            });
+        }
     }
 })();
 
@@ -75,12 +71,12 @@ let maxValues = {
 var title;
 app.get('/', (req, res) => {
     title = 'Pokedex!';
-    res.render('home', {title: title})
+    res.render('home', {title: title, initialPokemons: initialPokemons})
 });
 
 app.get('/card', (req, res) => {
     title = 'Card Test';
-    res.render('card', {title: title, pokemons: pokemonsList, initialPokemons: initialPokemons, maxValues: maxValues})
+    res.render('card', {title: title, pokemons: pokemonsList, initialPokemons: initialPokemons})
 })
 
 // Server Running

@@ -66,7 +66,7 @@
                                                         <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
                                                             style="width: <%= pokemon.stats['hp'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['hp'] %>" aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-hp'] %>">
+                                                            aria-valuemax="100">
                                                             HP (<%= pokemon.stats['hp'] %>)</div>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                             style="width: <%= pokemon.stats['attack'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['attack'] %>"
                                                             aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-attack'] %>">
+                                                            aria-valuemax="100">
                                                             ATTACK (<%= pokemon.stats['attack'] %>)</div>
                                                     </div>
                                                 </div>
@@ -86,7 +86,7 @@
                                                             style="width: <%= pokemon.stats['defense'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['defense'] %>"
                                                             aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-defense'] %>">
+                                                            aria-valuemax="100">
                                                             DEFENSE (<%= pokemon.stats['defense'] %>)</div>
                                                     </div>
                                                 </div>
@@ -96,7 +96,7 @@
                                                             style="width: <%= pokemon.stats['special-attack'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['special-attack'] %>"
                                                             aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-special-attack'] %>">
+                                                            aria-valuemax="100">
                                                             SPECIAL ATTACK (<%= pokemon.stats['special-attack'] %>)</div>
                                                     </div>
                                                 </div>
@@ -106,7 +106,7 @@
                                                             style="width: <%= pokemon.stats['special-defense'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['special-defense'] %>"
                                                             aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-special-defense'] %>">
+                                                            aria-valuemax="100">
                                                             SPECIAL DEFENSE (<%= pokemon.stats['special-defense'] %>)</div>
                                                     </div>
                                                 </div>
@@ -116,7 +116,7 @@
                                                             style="width: <%= pokemon.stats['speed'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['speed'] %>"
                                                             aria-valuemin="0"
-                                                            aria-valuemax="<%= maxValues['max-speed'] %>">
+                                                            aria-valuemax="100">
                                                             SPEED (<%= pokemon.stats['speed'] %>)</div>
                                                     </div>
                                                 </div>
@@ -165,11 +165,7 @@
         </div>
     </div>
 
-    <!-- Carousel Script -->
-
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/carousel/owl.carousel.min.js"></script>
-    <script src="js/setup.js"></script>
+<%- include ('./partials/footer.ejs') %>
 
 </body>
 
