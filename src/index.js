@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const got = require('got');
 const path = require('path');
+const ejs = require('ejs');
 
 //Configuration to use
 app.set('views', path.join(__dirname, '../views'))
@@ -69,14 +70,14 @@ let initialPokemons = [];
 
 //Routes
 var title;
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     title = 'Pokedex!';
-    res.render('home', {title: title, initialPokemons: initialPokemons})
+    res.render('home', {title: title, initialPokemons: initialPokemons, homepage: true})
 });
 
 app.get('/card', (req, res) => {
     title = 'Card Test';
-    res.render('card', {title: title, pokemons: pokemonsList, initialPokemons: initialPokemons})
+    res.render('card', {title: title, pokemons: pokemonsList, homepage: false, initialPokemons: initialPokemons})
 })
 
 // Server Running
