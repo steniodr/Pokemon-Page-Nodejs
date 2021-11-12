@@ -27,7 +27,7 @@ let initialPokemons = [];
         return string[0].toUpperCase() + string.slice(1);
     }
 
-    for(let i = 1; i <= 60; i++){
+    for(let i = 1; i <= 100; i++){
         rawData = await got(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         pokemon = JSON.parse(rawData.body);
         abilities = pokemon.abilities.map(a => a.ability.name);
