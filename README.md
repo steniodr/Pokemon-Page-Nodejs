@@ -79,7 +79,7 @@ localhost:8080/
 
 ## Demonstration
 
-<img src="https://github.com/steniodr/Pokemon-Page-Nodejs/tree/main/public/img/Pokemons.gif" alt="Demo Pokemon Page" width="100%" height="100%"/>
+<img src="https://github.com/steniodr/Pokemon-Page-Nodejs/blob/main/public/img/Pokemons.gif" alt="Demo Pokemon Page" width="100%" height="100%"/>
 
 ## License
 
