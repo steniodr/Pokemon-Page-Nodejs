@@ -76,8 +76,8 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/card', (req, res) => {
-    title = 'Card Test';
-    res.render('card', {title: title, pokemons: pokemonsList, homepage: false, initialPokemons: initialPokemons})
+    title = 'More Pokemons!';
+    res.render('pokemons', {title: title, pokemons: pokemonsList, homepage: false})
 })
 
 // Server Running

@@ -7,12 +7,12 @@
         <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/pokemon-23-logo.png" alt="Pokemon-Logo" width="100%"
             class="pokemon-logo">
         <div class="container-pokeball">
-            <div class="pokeball pokeball-animated"></div>
+            <div class="pokeball pokeball-animated" onclick="location.href = '/card';"></div>
         </div>
     </div>
     <div class="row pt-5">
         <div class="col-md-12">
-            <h1 class="fw-bold text-center choose">I Choose you!</h1>
+            <h1 class="text-center choose">I Choose you!</h1>
         </div>
     </div>
     <div class="container pb-5">
@@ -155,29 +155,44 @@
             </div>
         </div>
     </div>
-    <section>
-        <div class="aboutMe about_container">
-            <div class="about_card">
-                <div class="about_content">
-                    <div class="imgBx"><img src="img/Stenio.jpg" alt="Stenio D. Rapchan" width="300px"></div>
-                    <div class="contentBx">
-                        <h3>Stenio D. Rapchan<br><span>Backend Developer Jr.</span></h3>
-                    </div>
-                </div>
-                <ul class="sci">
-                    <li style="--i:1">
-                        <a href="https://www.linkedin.com/in/stenio-dias-rapchan/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li style="--i:2">
-                        <a href="https://github.com/steniodr/" target="_blank"><i class="fab fa-github-square"></i></a>
-                    </li>
-                    <li style="--i:3">
-                        <a href="mailto:steniodr@hotmail.com"><i class="fas fa-envelope-square"></i></a>
-                    </li>
-                </ul>
-            </div>
+    <div class="row pt-3 pb-5">
+        <div class="col-md-12">
+            <h1 class="fw-bold text-center">About me</h1>
         </div>
-    </section>
+    </div>
+    <div class="container aboutMe">
+        <section>
+            <div class="about_container">
+                <div class="about_card">
+                    <div class="about_content">
+                        <div class="imgBx"><img src="img/Stenio.jpg" alt="Stenio D. Rapchan" width="300px"></div>
+                            <div class="contentBx">
+                                <h3>Stenio D. Rapchan<br><span><span id="spin"></span> Developer Jr.</span></h3>
+                            </div>
+                    </div>
+                        <ul class="sci">
+                            <li style="--i:1">
+                                <a href="https://www.linkedin.com/in/stenio-dias-rapchan/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                            </li>
+                            <li style="--i:2">
+                                <a href="https://github.com/steniodr/" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
+                            </li>
+                            <li style="--i:3">
+                                <a href="mailto:steniodr@hotmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row pt-3 pb-5">
+        <div class="col-md-12">
+            <h1 class="fw-bold text-center">Did you think it's over? Click on the pokeball and see more Pokemons! </h1>
+        </div>
+    </div>
+    <div class="btn-back-to-top" onclick="backToTop()">
+        <i class="fas fa-arrow-up fa-2x"></i>
+    </div>
 
 <%- include ('./partials/footer.ejs') %>
 

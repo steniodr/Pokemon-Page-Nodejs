@@ -3,14 +3,20 @@
 <%- include ('./partials/header.ejs') %>
 
 <body>
-    <div class="container">
-        <h3>Pokemons <%= pokemons.length %></h3>
-        <div class="mt-3 p-3 bg-secondary">
-            <div class="owl-carousel owl-theme">
-                <% pokemons.forEach((pokemon) => { %>
-                <div class="item">
+    <div class="btn-back-page">
+        <i class="text-left fas fa-chevron-left fa-2x" title="Back to Homepage!" onclick="location.href = '/';"></i>
+    </div>
+    <div class="row">
+        <div class="col-md-12 title">
+            <h2 class="text-center fw-bold mt-5">Pokemon Catalog</h2>
+        </div>
+    </div>
+    <div class="container mirror p-5 mt-5 mb-5">
+        <div class="row">
+            <% pokemons.forEach((pokemon) => { %>
+                <div class="col-md-3">
                     <div class="cards">
-                        <div class="card">
+                        <div class="custom-card">
                             <div class="card__side card__side--front <%= pokemon.types[0] %>">
                                 <div class="row">
                                     <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="pokemon-img">
@@ -30,6 +36,15 @@
                                             class="fw-bold btn btn-light <%= pokemon.types[0] %>"><%= pokemon.types[0] %></button>
                                     </div>
                                     <% } %>
+                                    <div class="col-md-6 text-center pt-4">
+                                        <i class="fas fa-weight fa-2x"></i><p class="fw-bold"><%= pokemon.weight  / 10%> Kg</p>
+                                        <p class="text-light">Weight</p>
+                                    </div>
+                                    <div class="col-md-6 text-center pt-4">
+                                        <i class="fas fa-ruler-vertical fa-2x"></i><p class="fw-bold"><%= pokemon.height  / 10%> m</p>
+                                        <p class="text-light">Height</p>
+                                    </div>
+
                                     <!-- Fazer campos de tamanho e peso -->
                                 </div>
                             </div>
@@ -58,12 +73,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h3 class="fw-bold text-center pb-2">Stats</h3>
+                                        <h3 class="fw-bold text-center pb-2">Base Stats</h3>
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['hp'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['hp'] %>" aria-valuemin="0"
                                                             aria-valuemax="100">
@@ -72,51 +88,53 @@
                                                 </div>
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar bg-attack progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar bg-attack progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['attack'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['attack'] %>"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuemin="0" aria-valuemax="100">
                                                             ATTACK (<%= pokemon.stats['attack'] %>)</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['defense'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['defense'] %>"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuemin="0" aria-valuemax="100">
                                                             DEFENSE (<%= pokemon.stats['defense'] %>)</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['special-attack'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['special-attack'] %>"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            SPECIAL ATTACK (<%= pokemon.stats['special-attack'] %>)</div>
+                                                            aria-valuemin="0" aria-valuemax="100">
+                                                            SPECIAL ATTACK (<%= pokemon.stats['special-attack'] %>)
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar bg-special-defense progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar bg-special-defense progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['special-defense'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['special-defense'] %>"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                            SPECIAL DEFENSE (<%= pokemon.stats['special-defense'] %>)</div>
+                                                            aria-valuemin="0" aria-valuemax="100">
+                                                            SPECIAL DEFENSE (<%= pokemon.stats['special-defense'] %>)
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 pb-3">
                                                     <div class="progress">
-                                                        <div class="progress-bar bg-speed progress-bar-striped progress-bar-animated" role="progressbar"
+                                                        <div class="progress-bar bg-speed progress-bar-striped progress-bar-animated"
+                                                            role="progressbar"
                                                             style="width: <%= pokemon.stats['speed'] %>%"
                                                             aria-valuenow="<%= pokemon.stats['speed'] %>"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuemin="0" aria-valuemax="100">
                                                             SPEED (<%= pokemon.stats['speed'] %>)</div>
                                                     </div>
                                                 </div>
@@ -128,43 +146,12 @@
                         </div>
                     </div>
                 </div>
-                <% }) %>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Aplicar alterações no restante dos cards -->
-    <div class="container">
-        <div class="row">
-            <% pokemons.forEach((pokemon) => { %>
-            <div class="col-md-3">
-                <div class="cards">
-                    <div class="card">
-                        <div class="card__side card__side--front <%= pokemon.types[0] %>">
-                            <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="pokemon-img">
-                            <h2 class="fw-bold mb-0 text-center"><%= pokemon.name %></h2>
-                            <div class="card__descripton"> Details </div>
-                        </div>
-                        <div class="card__side card__side--back <%= pokemon.types[0] %>">
-                            <div class="row">
-                                <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="col-md-6">
-                                <p class="col-md-6"><%= pokemon.types[0] %></p>
-                                <!-- Fazer forEach nos tipos -->
-                            </div>
-                            <h2 class="fw-bold mb-0 text-center"><%= pokemon.name %></h2>
-                            <div class="card__descripton"> <%= pokemon.abilities[0] %> </div>
-                            <!-- Fazer forEach nos habilidades -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
             <% }) %>
-
         </div>
     </div>
-
+    <div class="btn-back-to-top" onclick="backToTop()">
+        <i class="fas fa-arrow-up fa-2x"></i>
+    </div>
 <%- include ('./partials/footer.ejs') %>
 
 </body>
