@@ -71,7 +71,7 @@ let initialPokemons = [];
 //Routes
 var title;
 app.get('/', async (req, res) => {
-    title = 'Pokedex!';
+    title = 'Pokemon Home';
     res.render('home', {title: title, initialPokemons: initialPokemons, homepage: true})
 });
 

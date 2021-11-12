@@ -23,6 +23,10 @@ body {
 	justify-content: space-evenly;
 }
 
+.initials{
+	margin-top: -15%;
+}
+
 .custom-card {
 	width: 100%;
 	position: relative;
@@ -33,11 +37,6 @@ body {
 .pokemon-img {
 	width: 100%;
 	margin-bottom: -10%;
-	fill: #fff;
-}
-
-.pokemon-img-back {
-	width: 25%;
 	fill: #fff;
 }
 
@@ -61,8 +60,18 @@ body {
 	transform: rotateY(180deg);
 }
 
-.card__side--back > img {
-	width: 50%;
+
+.all-pokemons {
+	background-image: linear-gradient(
+        120deg, 
+        hsl(111, 55%, 64%), 
+        hsl(160, 64%, 43%),
+        hsl(209, 100%, 58%),
+        hsl(246, 95%, 62%),
+        hsl(44, 100%, 50%),
+        hsl(21, 100%, 59%)
+    );
+	color: #fff;
 }
 
 .grass {
@@ -127,6 +136,11 @@ body {
 
 .rock {
 	background-image: linear-gradient(to right bottom, #e9ddbe, #8d7d50);
+	color: #fff;
+}
+
+.ghost {
+	background-image: linear-gradient(to right bottom, #ffffff, #000000);
 	color: #fff;
 }
 

@@ -63,3 +63,10 @@ body {
     color: #e4130c;
 }
 
+.filter-card {
+    display: none;
+}
+
+.show {
+    display: block;
+}

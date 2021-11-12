@@ -11,10 +11,31 @@
             <h2 class="text-center fw-bold mt-5">Pokemon Catalog</h2>
         </div>
     </div>
-    <div class="container mirror p-5 mt-5 mb-5">
+    <div class="container mirror p-3 mt-5 mb-5 text-center" id="filter-container">
+        <button type="button" class="fw-bold btn btn-light all-pokemons active" onclick="filterSelection('all')">All Pokemons</button>
+        <button type="button" class="fw-bold btn btn-light grass" onclick="filterSelection('grass-type')">grass</button>
+        <button type="button" class="fw-bold btn btn-light fire" onclick="filterSelection('fire-type')">fire</button>
+        <button type="button" class="fw-bold btn btn-light water" onclick="filterSelection('water-type')">water</button>
+        <button type="button" class="fw-bold btn btn-light electric" onclick="filterSelection('electric-type')">electric</button>
+        <button type="button" class="fw-bold btn btn-light bug" onclick="filterSelection('bug-type')">bug</button>
+        <button type="button" class="fw-bold btn btn-light poison" onclick="filterSelection('poison-type')">poison</button>
+        <button type="button" class="fw-bold btn btn-light flying" onclick="filterSelection('flying-type')">flying</button>
+        <button type="button" class="fw-bold btn btn-light normal" onclick="filterSelection('normal-type')">normal</button>
+        <button type="button" class="fw-bold btn btn-light ground" onclick="filterSelection('ground-type')">ground</button>
+        <button type="button" class="fw-bold btn btn-light fairy" onclick="filterSelection('fairy-type')">fairy</button>
+        <button type="button" class="fw-bold btn btn-light fighting" onclick="filterSelection('fighting-type')">fighting</button>
+        <button type="button" class="fw-bold btn btn-light psychic" onclick="filterSelection('psychic-type')">psychic</button>
+        <button type="button" class="fw-bold btn btn-light rock" onclick="filterSelection('rock-type')">rock</button>
+        <button type="button" class="fw-bold btn btn-light ghost" onclick="filterSelection('ghost-type')">ghost</button>
+    </div>
+    <div class="container mirror p-5 mt-5 mb-5 filter">
         <div class="row">
             <% pokemons.forEach((pokemon) => { %>
-                <div class="col-md-3">
+                <% if (pokemon.types.length > 1) { %>
+                    <div class="col-md-3 filter-card <%= pokemon.types[0] + '-type' + ' ' + pokemon.types[1] + '-type'%>">
+                <% } else { %>
+                    <div class="col-md-3 filter-card <%= pokemon.types[0] + '-type' %>">
+                <% } %>
                     <div class="cards">
                         <div class="custom-card">
                             <div class="card__side card__side--front <%= pokemon.types[0] %>">
@@ -50,10 +71,10 @@
                             </div>
                             <div class="card__side card__side--back <%= pokemon.types[0] %>">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="pokemon-img">
                                     </div>
-                                    <div class="col-md-6 pt-4 text-center">
+                                    <div class="col-md-8 pt-4 text-center">
                                         <h4 class="fw-bold"><%= pokemon.name %></h4>
                                         <% pokemon.types.forEach( type => { %>
                                         <button type="button"
@@ -62,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 pt-4">
                                         <h3 class="fw-bold text-center">Abilities</h3>
                                     </div>
                                     <% pokemon.abilities.forEach( ability => { %>
@@ -73,7 +94,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h3 class="fw-bold text-center pb-2">Base Stats</h3>
+                                        <h3 class="fw-bold text-center pt-3 pb-2">Base Stats</h3>
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-12 pb-3">

@@ -24,9 +24,9 @@
                         <div class="custom-card">
                             <div class="card__side card__side--front <%= pokemon.types[0] %>">
                                 <div class="row">
-                                    <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="pokemon-img">
+                                    <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" class="pokemon-img initials">
                                     <div class="col-md-12">
-                                        <h2 class="fw-bold mb-0 text-center"><%= pokemon.name %></h2>
+                                        <h2 class="fw-bold text-center"><%= pokemon.name %></h2>
                                     </div>
                                     <% if (pokemon.types.length > 1) { %>
                                     <% pokemon.types.forEach( type => { %>
@@ -155,9 +155,11 @@
             </div>
         </div>
     </div>
-    <div class="row pt-3 pb-5">
-        <div class="col-md-12">
-            <h1 class="fw-bold text-center">About me</h1>
+    <div class="container">
+        <div class="row pt-3 pb-5">
+            <div class="col-md-12">
+                <h1 class="fw-bold text-center">About me</h1>
+            </div>
         </div>
     </div>
     <div class="container aboutMe">
@@ -185,9 +187,11 @@
             </div>
         </section>
     </div>
-    <div class="row pt-3 pb-5">
-        <div class="col-md-12">
-            <h1 class="fw-bold text-center">Did you think it's over? Click on the pokeball and see more Pokemons! </h1>
+    <div class="container">
+        <div class="row pt-3 pb-5">
+            <div class="col-md-12">
+                <h1 class="fw-bold text-center">Did you think it's over? Click on the pokeball and see more Pokemons! </h1>
+            </div>
         </div>
     </div>
     <div class="btn-back-to-top" onclick="backToTop()">
