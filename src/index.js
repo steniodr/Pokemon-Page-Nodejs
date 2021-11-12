@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const got = require('got');
 const path = require('path');
-const ejs = require('ejs');
 
 //Configuration to use
 app.set('views', path.join(__dirname, '../views'))
